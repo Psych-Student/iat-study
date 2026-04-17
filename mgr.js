@@ -9,7 +9,7 @@ define(['managerAPI',
 
 	var API    = new Manager();
 	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
-	init_data_pipe(API, 'zpjKaPesdEOI',  {file_type:'csv'});	
+	init_data_pipe(API, 'Djsdn7ZyiBgp',  {file_type:'csv'});	
 
     API.setName('mgr');
     API.addSettings('skip',true);
@@ -106,7 +106,7 @@ define(['managerAPI',
         redirect:
         [{ 
 			//Replace with any URL you need to put at the end of your study, or just remove this task from the sequence below
-            type:'redirect', name:'redirecting', url: 'https://www.google.com/search' 
+            type:'redirect', name:'redirecting', url: 'exampleiat.html' 
         }],
 		
 		//This task waits until the data are sent to the server.
