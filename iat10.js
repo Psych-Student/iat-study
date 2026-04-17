@@ -670,7 +670,7 @@ instFirstCombined : '<div style="font-family: Inter, system-ui, sans-serif; max-
 			}
 
 			var template = '' +
-			'   <div style="margin:0 1em; text-align:center; line-height:1.4;"> '  +
+			'   <div style="margin:0 1em; text-align:<%= stimulusData.isLeft ? \'left\' : \'right\' %>; line-height:1.4;"> '  +
 			'   	<div style="font-size:0.75em; margin-bottom:4px; <%= stimulusData.keysCss %>; visibility:<%= stimulusData.isTouch ? \'hidden\' : \'visible\' %>">  '  +
 			'   		<%= stimulusData.isLeft ? stimulusData.leftKeyText : stimulusData.rightKeyText %>  '  +
 			'   	</div>  '  +
