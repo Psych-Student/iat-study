@@ -13,7 +13,12 @@ define(['pipAPI','iat10.js'], function(APIConstructor, iatExtension){
             stimulusMedia : [
                 {image: 'm1.jpg'},
                 {image: 'm2.jpg'},
-                {image: 'm3.jpg'}
+                {image: 'm3.jpg'},
+                {image: 'm4.jpg'},
+                {image: 'm5.jpg'},
+                {image: 'm6.jpg'},
+                {image: 'm7.jpg'},
+                {image: 'm8.jpg'}
             ],
             stimulusCss : {color:'#16a34a','font-size':'2em', 'max-height':'350px', 'max-width':'350px'}
         },    
@@ -27,7 +32,12 @@ define(['pipAPI','iat10.js'], function(APIConstructor, iatExtension){
             stimulusMedia : [
                 {image: 'f1.jpg'},
                 {image: 'f2.jpg'},
-                {image: 'f3.jpg'}
+                {image: 'f3.jpg'},
+                {image: 'f4.jpg'},
+                {image: 'f5.jpg'},
+                {image: 'f6.jpg'},
+                {image: 'f7.jpg'},
+                {image: 'f8.jpg'}
             ],
             stimulusCss : {color:'#16a34a','font-size':'2em', 'max-height':'350px', 'max-width':'350px'}
         },
