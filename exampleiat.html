@@ -204,12 +204,22 @@
 				background: #f5f3ff;
 			}
 
-			[pi-quest] ol li.selected, 
+[pi-quest] ol li.selected,
 			[pi-quest] ol li.active,
 			[pi-quest] .list-group-item.active {
 				border-color: var(--primary);
-				background: #eef2ff;
+				background: #eef2ff !important;
 				box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+				color: var(--text) !important;
+			}
+
+			[pi-quest] ol li.selected label,
+			[pi-quest] ol li.active label,
+			[pi-quest] .list-group-item.active label,
+			[pi-quest] ol li.selected *,
+			[pi-quest] ol li.active *,
+			[pi-quest] .list-group-item.active * {
+				color: var(--text) !important;
 			}
 
 			[pi-quest] ol li label, [pi-quest] .list-group-item label {
