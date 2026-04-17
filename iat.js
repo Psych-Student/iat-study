@@ -15,8 +15,8 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
                 {image: 'm2.jpg'},
                 {image: 'm3.jpg'}
             ],
-            //Stimulus css (style)
-            stimulusCss : {color:'#31940F','font-size':'2.3em'}
+            //Stimulus css (style) - constrain image size
+            stimulusCss : {color:'#31940F','font-size':'2.3em', 'max-height':'200px', 'max-width':'200px'}
         },    
         category2 : {
             name : global.womenLabels, //Will appear in the data.
@@ -30,8 +30,8 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
                 {image: 'f2.jpg'},
                 {image: 'f3.jpg'}
             ],
-            //Stimulus css (style)
-            stimulusCss : {color:'#31940F','font-size':'2.3em'}
+            //Stimulus css (style) - constrain image size
+            stimulusCss : {color:'#31940F','font-size':'2.3em', 'max-height':'200px', 'max-width':'200px'}
         },
         attribute1 : {
             name : 'Supporter',
