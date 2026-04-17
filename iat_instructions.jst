@@ -1,0 +1,58 @@
+<%
+    var respInst = "you will use the 'E' and 'I' computer keys to";
+    if (global.$isTouch)  respInst = "you will";
+%>
+
+<div class="panel panel-info" style="margin-top:1em">
+	<div class="panel-heading">
+		<h1 class="panel-title">Sorting Task Instructions</h1>
+	</div>
+	<div class="panel-body">
+	<p class="lead">Next, <%=respInst%> categorize items into groups as fast as you can. 
+	These are the four groups and the items that belong to each:</p>
+
+	<table class="table table-bordered">
+		<tr class="active">
+			<th>Category</th>
+			<th>Items</th>
+		</tr>
+		<tr>
+			<th>Leader</th>
+			<td><%=global.leaderWords[0]%>, <%=global.leaderWords[1]%>, <%=global.leaderWords[2]%>, 
+			<%=global.leaderWords[3]%>, <%=global.leaderWords[4]%>, <%=global.leaderWords[5]%></td>
+		</tr>
+		<tr>
+			<th>Supporter</th>
+			<td><%=global.supporterWords[0]%>, <%=global.supporterWords[1]%>, <%=global.supporterWords[2]%>, 
+			<%=global.supporterWords[3]%>, <%=global.supporterWords[4]%>, <%=global.supporterWords[5]%></td>
+		</tr>
+		<tr>
+			<th><%=global.menLabels%></th>
+			<td>
+				<img src="<%=global.baseURL%>m1.jpg" height=60>
+				<img src="<%=global.baseURL%>m2.jpg" height=60>
+				<img src="<%=global.baseURL%>m3.jpg" height=60>
+			</td>
+		</tr>
+		<tr>
+			<th><%=global.womenLabels%></th>
+			<td>
+				<img src="<%=global.baseURL%>f1.jpg" height=60>
+				<img src="<%=global.baseURL%>f2.jpg" height=60>
+				<img src="<%=global.baseURL%>f3.jpg" height=60>
+			</td>
+		</tr>
+	</table>
+
+	<p class="lead" style="background: #fef3c7; padding: 12px 16px; border-radius: 8px; border-left: 4px solid #f59e0b;">
+		<strong>Note:</strong> There are seven parts. The instructions change for each part. Pay attention!
+	</p>
+
+	<div class="text-center proceed" style="margin: 30px auto 10px;">
+		<button pi-message-done type="button" class="btn btn-primary">
+			Start Task
+		</button>
+	</div>
+	</div>
+</div>
+

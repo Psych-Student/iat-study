@@ -14,47 +14,21 @@ define(['managerAPI',
     API.setName('mgr');
     API.addSettings('skip',true);
 
-    //Randomly select which of two sets of category labels to use.
-    let raceSet = API.shuffle(['a','b'])[0];
-    let blackLabels = [];
-    let whiteLabels = [];
-
-    if (raceSet == 'a') {
-        blackLabels.push('African Americans');
-        whiteLabels.push('European Americans');
-    } else {
-        blackLabels.push('Black people');
-        whiteLabels.push('White people');
-    }
+    // Randomly assign to video condition (50% chance)
+    let videoCondition = API.shuffle([true, false])[0];
 
     API.addGlobal({
-        raceiat:{},
-        //YBYB: change when copying back to the correct folder
+        iat:{},
         baseURL: './images/',
-        raceSet:raceSet,
-        blackLabels:blackLabels,
-        whiteLabels:whiteLabels,
-        //Select randomly what attribute words to see. 
-        //Based on Axt, Feng, & Bar-Anan (2021).
-        posWords : API.shuffle([
-            'Love', 'Cheer', 'Friend', 'Pleasure',
-            'Adore', 'Cheerful', 'Friendship', 'Joyful', 
-            'Smiling','Cherish', 'Excellent', 'Glad', 
-            'Joyous', 'Spectacular', 'Appealing', 'Delight', 
-            'Excitement', 'Laughing', 'Attractive','Delightful', 
-            'Fabulous', 'Glorious', 'Pleasing', 'Beautiful', 
-            'Fantastic', 'Happy', 'Lovely', 'Terrific', 
-            'Celebrate', 'Enjoy', 'Magnificent', 'Triumph'
+        menLabels: 'Men',
+        womenLabels: 'Women',
+        videoCondition: videoCondition,
+        // Leader and Supporter word sets
+        leaderWords : API.shuffle([
+            'Leader', 'Manager', 'Ambitious', 'Assertive', 'Decisive', 'Dominant'
         ]), 
-        negWords : API.shuffle([
-            'Abuse', 'Grief', 'Poison', 'Sadness', 
-            'Pain', 'Despise', 'Failure', 'Nasty', 
-            'Angry', 'Detest', 'Horrible', 'Negative', 
-            'Ugly', 'Dirty', 'Gross', 'Evil', 
-            'Rotten','Annoy', 'Disaster', 'Horrific',  
-            'Scorn', 'Awful', 'Disgust', 'Hate', 
-            'Humiliate', 'Selfish', 'Tragic', 'Bothersome', 
-            'Hatred', 'Hurtful', 'Sickening', 'Yucky'
+        supporterWords : API.shuffle([
+            'Supporter', 'Assistant', 'Helpful', 'Amenable', 'Hesitant', 'Passive'
         ])
     });
 
@@ -72,24 +46,32 @@ define(['managerAPI',
             header: 'Welcome'
         }],
 
-        raceiat_instructions: [{
+        video: [{
             inherit: 'instructions',
-            name: 'raceiat_instructions',
-            templateUrl: 'raceiat_instructions.jst',
+            name: 'video',
+            templateUrl: 'video.jst',
+            title: 'Video',
+            header: 'Please watch the following video'
+        }],
+
+        iat_instructions: [{
+            inherit: 'instructions',
+            name: 'iat_instructions',
+            templateUrl: 'iat_instructions.jst',
             title: 'IAT Instructions',
             header: 'Implicit Association Test'
         }],
 
-        explicits: [{
+        demographics: [{
             type: 'quest',
-            name: 'explicits',
-            scriptUrl: 'explicits.js'
+            name: 'demographics',
+            scriptUrl: 'demographics.js'
         }],
 
-        raceiat: [{
+        iat: [{
             type: 'time',
-            name: 'raceiat',
-            scriptUrl: 'raceiat.js'
+            name: 'iat',
+            scriptUrl: 'iat.js'
         }],
 
         lastpage: [{
@@ -116,7 +98,7 @@ define(['managerAPI',
     API.addSequence([
         { type: 'isTouch' }, //Use Minno's internal touch detection mechanism. 
         
-        { type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
+        { type: 'post', path: ['$isTouch', 'videoCondition'] },
 
         // apply touch only styles
         {
@@ -126,14 +108,13 @@ define(['managerAPI',
                 {
                     type: 'injectStyle',
                     css: [
-                        '* {color:red}',
-                        '[piq-page] {background-color: #fff; border: 1px solid transparent; border-radius: 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); margin-bottom: 20px; border-color: #bce8f1;}',
+                        '[piq-page] {background-color: #fff; border: 1px solid transparent; border-radius: 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); margin-bottom: 20px; border-color: #e2e8f0;}',
                         '[piq-page] > ol {margin: 15px;}',
                         '[piq-page] > .btn-group {margin: 0px 15px 15px 15px;}',
-                        '.container {padding:5px;}',
+                        '.container {padding:5px; max-width:800px; margin:0 auto;}',
                         '[pi-quest]::before, [pi-quest]::after {content: " ";display: table;}',
                         '[pi-quest]::after {clear: both;}',
-                        '[pi-quest] h3 { border-bottom: 1px solid transparent; border-top-left-radius: 3px; border-top-right-radius: 3px; padding: 10px 15px; color: inherit; font-size: 2em; margin-bottom: 20px; margin-top: 0;background-color: #d9edf7;border-color: #bce8f1;color: #31708f;}',
+                        '[pi-quest] h3 { border-bottom: 1px solid transparent; border-top-left-radius: 8px; border-top-right-radius: 8px; padding: 16px 20px; font-size: 1.5em; margin-bottom: 20px; margin-top: 0; background: linear-gradient(135deg, #4f46e5, #4338ca); color: white;}',
                         '[pi-quest] .form-group > label {font-size:1.2em; font-weight:normal;}',
 
                         '[pi-quest] .btn-toolbar {margin:15px;float:none !important; text-align:center;position:relative;}',
@@ -155,17 +136,27 @@ define(['managerAPI',
         
         
         {inherit: 'intro'},
+
+        // Show video only if videoCondition is true (50% of participants)
+        {
+            mixer: 'branch',
+            conditions: {compare: 'global.videoCondition', to: true},
+            data: [
+                {inherit: 'video'}
+            ]
+        },
+
         {
             mixer:'random',
             data:[
-                {inherit: 'explicits'},
+                {inherit: 'demographics'},
 
-                // force the instructions to preceed the iat
+                // force the instructions to precede the iat
                 {
                     mixer: 'wrapper',
                     data: [
-                        {inherit: 'raceiat_instructions'},
-                        {inherit: 'raceiat'}
+                        {inherit: 'iat_instructions'},
+                        {inherit: 'iat'}
                     ]
                 }
             ]
