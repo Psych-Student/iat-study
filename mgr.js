@@ -29,10 +29,10 @@ define(['managerAPI',
         videoCondition: videoCondition,
         // Leader and Supporter word sets
         leaderWords : API.shuffle([
-            'Leader', 'Manager', 'Ambitious', 'Assertive', 'Decisive', 'Dominant'
+            'Leader', 'Boss', 'Executive', 'Manager', 'Supervisor', 'Authority', 'Decisive', 'Assertive'
         ]), 
         supporterWords : API.shuffle([
-            'Supporter', 'Assistant', 'Helpful', 'Amenable', 'Hesitant', 'Passive'
+            'Supporter', 'Assistant', 'Helper', 'Worker', 'Passive', 'Subordinate', 'Follower', 'Staff'
         ])
     });
 

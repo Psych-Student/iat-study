@@ -185,9 +185,9 @@ leftKeyText : 'Press E for',
 				'<p style="text-align:center; color:#64748b; font-size:14px; margin-bottom:24px; font-weight:500;">Part blockNum of nBlocks</p>' +
 				'<div style="background:#f8fafc; border-radius:12px; padding:24px; margin-bottom:20px;">' +
 				'<p style="font-size:16px; color:#1e293b; line-height:1.6; margin:0 0 16px 0;">' +
-				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">E</span> for <span style="background:#4f46e5; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">leftAttribute</span></p>' +
+				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">E</span> for <span style="background:#eef2ff; color:#4f46e5; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #4f46e5;">leftAttribute</span></p>' +
 				'<p style="font-size:16px; color:#1e293b; line-height:1.6; margin:0;">' +
-				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">I</span> for <span style="background:#4f46e5; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">rightAttribute</span></p>' +
+				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">I</span> for <span style="background:#eef2ff; color:#4f46e5; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #4f46e5;">rightAttribute</span></p>' +
 				'</div>' +
 				'<p style="font-size:14px; color:#64748b; line-height:1.6; margin-bottom:8px;">If you make a mistake, a red <span style="color:#ef4444; font-weight:600;">X</span> will appear. Press the other key to continue.</p>' +
 				'<p style="font-size:14px; color:#1e293b; font-weight:600; margin-bottom:24px;">Go as fast as you can while being accurate.</p>' +
@@ -213,9 +213,9 @@ leftKeyText : 'Press E for',
 				'<p style="text-align:center; color:#64748b; font-size:14px; margin-bottom:24px; font-weight:500;">Part blockNum of nBlocks</p>' +
 				'<div style="background:#f8fafc; border-radius:12px; padding:24px; margin-bottom:20px;">' +
 				'<p style="font-size:16px; color:#1e293b; line-height:1.6; margin:0 0 16px 0;">' +
-				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">E</span> for <span style="background:#16a34a; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">leftCategory</span></p>' +
+				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">E</span> for <span style="background:#dcfce7; color:#16a34a; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #16a34a;">leftCategory</span></p>' +
 				'<p style="font-size:16px; color:#1e293b; line-height:1.6; margin:0;">' +
-				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">I</span> for <span style="background:#16a34a; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">rightCategory</span></p>' +
+				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">I</span> for <span style="background:#dcfce7; color:#16a34a; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #16a34a;">rightCategory</span></p>' +
 				'</div>' +
 				'<p style="font-size:14px; color:#64748b; line-height:1.6; margin-bottom:8px;">Items will appear one at a time. If you make a mistake, a red <span style="color:#ef4444; font-weight:600;">X</span> will appear.</p>' +
 				'<p style="font-size:14px; color:#1e293b; font-weight:600; margin-bottom:24px;">Go as fast as you can while being accurate.</p>' +
@@ -241,9 +241,9 @@ instFirstCombined : '<div style="font-family: Inter, system-ui, sans-serif; max-
 				'<p style="text-align:center; color:#64748b; font-size:14px; margin-bottom:24px; font-weight:500;">Part blockNum of nBlocks</p>' +
 				'<div style="background:#f8fafc; border-radius:12px; padding:24px; margin-bottom:20px;">' +
 				'<p style="font-size:16px; color:#1e293b; line-height:1.8; margin:0 0 16px 0;">' +
-				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">E</span> for <span style="background:#16a34a; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">leftCategory</span> and <span style="background:#4f46e5; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">leftAttribute</span></p>' +
+				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">E</span> for <span style="background:#dcfce7; color:#16a34a; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #16a34a;">leftCategory</span> and <span style="background:#eef2ff; color:#4f46e5; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #4f46e5;">leftAttribute</span></p>' +
 				'<p style="font-size:16px; color:#1e293b; line-height:1.8; margin:0;">' +
-				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">I</span> for <span style="background:#16a34a; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">rightCategory</span> and <span style="background:#4f46e5; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">rightAttribute</span></p>' +
+				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">I</span> for <span style="background:#dcfce7; color:#16a34a; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #16a34a;">rightCategory</span> and <span style="background:#eef2ff; color:#4f46e5; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #4f46e5;">rightAttribute</span></p>' +
 				'</div>' +
 				'<p style="font-size:14px; color:#64748b; line-height:1.6; margin-bottom:8px;">Each item belongs to only one category. If you make a mistake, a red <span style="color:#ef4444; font-weight:600;">X</span> will appear.</p>' +
 				'<p style="font-size:14px; color:#1e293b; font-weight:600; margin-bottom:24px;">Go as fast as you can while being accurate.</p>' +
@@ -269,9 +269,9 @@ instFirstCombined : '<div style="font-family: Inter, system-ui, sans-serif; max-
 				'<div style="background:#f8fafc; border-radius:12px; padding:24px; margin-bottom:20px;">' +
 				'<p style="font-size:14px; color:#64748b; margin:0 0 16px 0;">Same as before:</p>' +
 				'<p style="font-size:16px; color:#1e293b; line-height:1.8; margin:0 0 16px 0;">' +
-				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">E</span> for <span style="background:#16a34a; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">leftCategory</span> and <span style="background:#4f46e5; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">leftAttribute</span></p>' +
+				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">E</span> for <span style="background:#dcfce7; color:#16a34a; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #16a34a;">leftCategory</span> and <span style="background:#eef2ff; color:#4f46e5; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #4f46e5;">leftAttribute</span></p>' +
 				'<p style="font-size:16px; color:#1e293b; line-height:1.8; margin:0;">' +
-				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">I</span> for <span style="background:#16a34a; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">rightCategory</span> and <span style="background:#4f46e5; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">rightAttribute</span></p>' +
+				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">I</span> for <span style="background:#dcfce7; color:#16a34a; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #16a34a;">rightCategory</span> and <span style="background:#eef2ff; color:#4f46e5; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #4f46e5;">rightAttribute</span></p>' +
 				'</div>' +
 				'<p style="font-size:14px; color:#1e293b; font-weight:600; margin-bottom:24px;">Go as fast as you can while being accurate.</p>' +
 				'<p style="text-align:center; color:#64748b; font-size:14px;">Press <span style="background:#e2e8f0; padding:4px 10px; border-radius:4px; font-weight:500;">Space</span> to start</p></div>',
@@ -298,9 +298,9 @@ instFirstCombined : '<div style="font-family: Inter, system-ui, sans-serif; max-
 				'</div>' +
 				'<div style="background:#f8fafc; border-radius:12px; padding:24px; margin-bottom:20px;">' +
 				'<p style="font-size:16px; color:#1e293b; line-height:1.6; margin:0 0 16px 0;">' +
-				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">E</span> for <span style="background:#16a34a; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">leftCategory</span></p>' +
+				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">E</span> for <span style="background:#dcfce7; color:#16a34a; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #16a34a;">leftCategory</span></p>' +
 				'<p style="font-size:16px; color:#1e293b; line-height:1.6; margin:0;">' +
-				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">I</span> for <span style="background:#16a34a; color:white; padding:4px 12px; border-radius:6px; font-weight:500;">rightCategory</span></p>' +
+				'Press <span style="background:#1e293b; color:white; padding:4px 12px; border-radius:6px; font-weight:600; font-family:monospace;">I</span> for <span style="background:#dcfce7; color:#16a34a; padding:4px 12px; border-radius:6px; font-weight:600; border:2px solid #16a34a;">rightCategory</span></p>' +
 				'</div>' +
 				'<p style="font-size:14px; color:#1e293b; font-weight:600; margin-bottom:24px;">Go as fast as you can while being accurate.</p>' +
 				'<p style="text-align:center; color:#64748b; font-size:14px;">Press <span style="background:#e2e8f0; padding:4px 10px; border-radius:4px; font-weight:500;">Space</span> to start</p></div>',

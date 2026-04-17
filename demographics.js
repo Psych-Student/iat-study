@@ -33,27 +33,21 @@ define(['questAPI'], function(Quest){
     API.addPagesSet('basicPage',{
         noSubmit:false,
         header: 'Demographics',
-        decline: true,
-        declineText: isTouch ? 'Decline' : 'Decline to Answer', 
+        decline: false,
         autoFocus:true, 
-        progressBar: 'Page <%= pagesMeta.number %> out of 3'
+        progressBar: 'Page <%= pagesMeta.number %> out of 6'
     });
 	
     /**
 	* Question prototypes
 	*/
     API.addQuestionsSet('basicQ',{
-        decline: 'true',
         required : true, 		
         errorMsg: {
-            required: isTouch 
-                ? 'Please select an answer, or click \'Decline\'' 
-                : 'Please select an answer, or click \'Decline to Answer\''
+            required: 'Please select an answer'
         },
         autoSubmit:'true',
-        numericValues:'true',
-        help: '<%= pagesMeta.number < 3 %>',
-        helpText: 'Tip: For quick response, click to select your answer, and then click again to submit.'
+        numericValues:'true'
     });
 
     API.addQuestionsSet('basicSelect',{
@@ -74,7 +68,8 @@ define(['questAPI'], function(Quest){
             {text: '35-44', value: 3},
             {text: '45-54', value: 4},
             {text: '55-64', value: 5},
-            {text: '65 or older', value: 6}
+            {text: '65 or older', value: 6},
+            {text: 'Prefer not to say', value: 0}
         ]
     });
 
@@ -83,26 +78,80 @@ define(['questAPI'], function(Quest){
         name: 'gender',
         stem: 'What is your gender?',
         answers: [
-            {text: 'Woman', value: 1},
-            {text: 'Man', value: 2},
-            {text: 'Non-binary', value: 3},
-            {text: 'Prefer to self-describe', value: 4},
-            {text: 'Prefer not to say', value: 5}
+            {text: 'Man', value: 1},
+            {text: 'Non-binary', value: 2},
+            {text: 'Woman', value: 3},
+            {text: 'Prefer not to say', value: 0}
         ]
     });
 
     API.addQuestionsSet('sexuality',{
         inherit : 'basicSelect',
-        name: 'sexuality',
-        stem: 'How do you describe your sexual orientation?',
+        name: 'sexual_orientation',
+        stem: 'What is your sexual orientation?',
         answers: [
-            {text: 'Heterosexual / Straight', value: 1},
-            {text: 'Gay / Lesbian', value: 2},
-            {text: 'Bisexual', value: 3},
-            {text: 'Queer', value: 4},
-            {text: 'Asexual', value: 5},
-            {text: 'Prefer to self-describe', value: 6},
-            {text: 'Prefer not to say', value: 7}
+            {text: 'Asexual', value: 1},
+            {text: 'Bisexual', value: 2},
+            {text: 'Gay', value: 3},
+            {text: 'Heterosexual', value: 4},
+            {text: 'Lesbian', value: 5},
+            {text: 'Pansexual', value: 6},
+            {text: 'Queer', value: 7},
+            {text: 'Prefer not to say', value: 0}
+        ]
+    });
+
+    API.addQuestionsSet('education',{
+        inherit : 'basicSelect',
+        name: 'education_level',
+        stem: 'What is your highest level of education?',
+        answers: [
+            {text: 'Associate degree', value: 1},
+            {text: 'Bachelor\'s degree', value: 2},
+            {text: 'Doctoral degree', value: 3},
+            {text: 'High school diploma or equivalent', value: 4},
+            {text: 'Master\'s degree', value: 5},
+            {text: 'Professional degree (e.g., MD, JD)', value: 6},
+            {text: 'Some college, no degree', value: 7},
+            {text: 'Some high school', value: 8},
+            {text: 'Trade/vocational training', value: 9},
+            {text: 'Prefer not to say', value: 0}
+        ]
+    });
+
+    API.addQuestionsSet('ethnicity',{
+        inherit : 'basicSelect',
+        name: 'ethnicity',
+        stem: 'What is your ethnicity?',
+        answers: [
+            {text: 'Asian', value: 1},
+            {text: 'Black or African American', value: 2},
+            {text: 'Hispanic or Latino', value: 3},
+            {text: 'Middle Eastern or North African', value: 4},
+            {text: 'Mixed or Multiple ethnicities', value: 5},
+            {text: 'Native American or Alaska Native', value: 6},
+            {text: 'Native Hawaiian or Pacific Islander', value: 7},
+            {text: 'White or Caucasian', value: 8},
+            {text: 'Prefer not to say', value: 0}
+        ]
+    });
+
+    API.addQuestionsSet('religion',{
+        inherit : 'basicSelect',
+        name: 'religion',
+        stem: 'What is your religion?',
+        answers: [
+            {text: 'Agnostic', value: 1},
+            {text: 'Atheist', value: 2},
+            {text: 'Buddhist', value: 3},
+            {text: 'Christian', value: 4},
+            {text: 'Hindu', value: 5},
+            {text: 'Jewish', value: 6},
+            {text: 'Muslim', value: 7},
+            {text: 'Sikh', value: 8},
+            {text: 'Spiritual but not religious', value: 9},
+            {text: 'Other', value: 10},
+            {text: 'Prefer not to say', value: 0}
         ]
     });
 
@@ -123,6 +172,18 @@ define(['questAPI'], function(Quest){
         {
             inherit:'basicPage', 
             questions: {inherit:'sexuality'}
+        },
+        {
+            inherit:'basicPage', 
+            questions: {inherit:'education'}
+        },
+        {
+            inherit:'basicPage', 
+            questions: {inherit:'ethnicity'}
+        },
+        {
+            inherit:'basicPage', 
+            questions: {inherit:'religion'}
         }
     ]);
 

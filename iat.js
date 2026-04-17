@@ -44,7 +44,9 @@ define(['pipAPI','iat10.js'], function(APIConstructor, iatExtension){
                 {word: global.supporterWords[2]},
                 {word: global.supporterWords[3]},
                 {word: global.supporterWords[4]},
-                {word: global.supporterWords[5]}
+                {word: global.supporterWords[5]},
+                {word: global.supporterWords[6]},
+                {word: global.supporterWords[7]}
             ],
             stimulusCss : {color:'#4f46e5','font-size':'1.8em','font-family':'Inter, system-ui, sans-serif'}
         },
@@ -61,7 +63,9 @@ define(['pipAPI','iat10.js'], function(APIConstructor, iatExtension){
                 {word: global.leaderWords[2]},
                 {word: global.leaderWords[3]},
                 {word: global.leaderWords[4]},
-                {word: global.leaderWords[5]}
+                {word: global.leaderWords[5]},
+                {word: global.leaderWords[6]},
+                {word: global.leaderWords[7]}
             ],
             stimulusCss : {color:'#4f46e5','font-size':'1.8em','font-family':'Inter, system-ui, sans-serif'}
         },
