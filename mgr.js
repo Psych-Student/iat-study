@@ -8,7 +8,10 @@ define(['managerAPI',
     //const pt = urlParams.get('pt');
 
 	var API    = new Manager();
-	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
+	
+	// Generate unique session ID (combines timestamp + random string for uniqueness)
+	const sessionId = Date.now().toString(36) + Math.random().toString(36).substring(2, 8);
+	
 	init_data_pipe(API, 'Djsdn7ZyiBgp',  {file_type:'csv'});
 
     API.setName('mgr');
@@ -19,6 +22,7 @@ define(['managerAPI',
 
     API.addGlobal({
         iat:{},
+        sessionId: sessionId,
         baseURL: './images/',
         menLabels: 'Men',
         womenLabels: 'Women',
@@ -97,8 +101,6 @@ define(['managerAPI',
 
     API.addSequence([
         { type: 'isTouch' }, //Use Minno's internal touch detection mechanism. 
-        
-        { type: 'post', path: ['$isTouch', 'videoCondition'] },
 
         // apply touch only styles
         {

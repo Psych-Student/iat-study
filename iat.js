@@ -68,7 +68,13 @@ define(['pipAPI','iat10.js'], function(APIConstructor, iatExtension){
         base_url : {//Where are your images at?
             image : global.baseURL
         },
-        isTouch : global.$isTouch
+        isTouch : global.$isTouch,
+        
+        // Include metadata in IAT output
+        data : {
+            sessionId: global.sessionId,
+            videoCondition: global.videoCondition
+        }
     });
 });
 
