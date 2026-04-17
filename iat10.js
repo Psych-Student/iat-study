@@ -21,16 +21,17 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			isTouch:false, //Set whether the task is on a touch device.
 			//Set the canvas of the task
 			canvas : {
-				maxWidth: 1000,
-				proportions : 0.6,
+				maxWidth: 1200,
+				proportions : 0.65,
 				background: '#ffffff',
-				borderWidth: 3,
+				borderWidth: 2,
 				canvasBackground: '#ffffff',
 				borderColor: '#e2e8f0',
 				css:{
 					"touch-action": "manipulation",
 					"margin": "0 auto",
-					"border-radius": "12px"
+					"border-radius": "12px",
+					"box-shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
 				}
 			},
 			category1 : {
@@ -669,18 +670,18 @@ instFirstCombined : '<div style="font-family: Inter, system-ui, sans-serif; max-
 			}
 
 			var template = '' +
-			'   <div style="margin:0 1em; text-align:center"> '  +
-			'   	<div style="font-size:0.8em; <%= stimulusData.keysCss %>; visibility:<%= stimulusData.isTouch ? \'hidden\' : \'visible\' %>">  '  +
+			'   <div style="margin:0 1em; text-align:center; line-height:1.4;"> '  +
+			'   	<div style="font-size:0.75em; margin-bottom:4px; <%= stimulusData.keysCss %>; visibility:<%= stimulusData.isTouch ? \'hidden\' : \'visible\' %>">  '  +
 			'   		<%= stimulusData.isLeft ? stimulusData.leftKeyText : stimulusData.rightKeyText %>  '  +
 			'   	</div>  '  +
 			'     '  +
-			'   	<div style="font-size:1.3em;<%= stimulusData.firstCss %>">  '  +
+			'   	<div style="font-size:1.4em; <%= stimulusData.firstCss %>">  '  +
 			'   		<%= stimulusData.first %>  '  +
 			'   	</div>  '  +
 			'     '  +
 			'   	<% if (stimulusData.second) { %>  '  +
-			'   		<div style="font-size:2.3em; <%= stimulusData.orCss %>"><%= stimulusData.orText %> </div>  '  +
-			'   		<div style="font-size:1.3em; max-width:100%; <%= stimulusData.secondCss %>">  '  +
+			'   		<div style="font-size:1.2em; margin:6px 0; <%= stimulusData.orCss %>"><%= stimulusData.orText %> </div>  '  +
+			'   		<div style="font-size:1.4em; max-width:100%; <%= stimulusData.secondCss %>">  '  +
 			'   			<%= stimulusData.second %>  '  +
 			'   		</div>  '  +
 			'   	<% } %>  '  +

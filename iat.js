@@ -15,7 +15,7 @@ define(['pipAPI','iat10.js'], function(APIConstructor, iatExtension){
                 {image: 'm2.jpg'},
                 {image: 'm3.jpg'}
             ],
-            stimulusCss : {color:'#16a34a','font-size':'2em', 'max-height':'180px', 'max-width':'180px'}
+            stimulusCss : {color:'#16a34a','font-size':'2em', 'max-height':'350px', 'max-width':'350px'}
         },    
         category2 : {
             name : global.womenLabels,
@@ -29,7 +29,7 @@ define(['pipAPI','iat10.js'], function(APIConstructor, iatExtension){
                 {image: 'f2.jpg'},
                 {image: 'f3.jpg'}
             ],
-            stimulusCss : {color:'#16a34a','font-size':'2em', 'max-height':'180px', 'max-width':'180px'}
+            stimulusCss : {color:'#16a34a','font-size':'2em', 'max-height':'350px', 'max-width':'350px'}
         },
         attribute1 : {
             name : 'Supporter',
