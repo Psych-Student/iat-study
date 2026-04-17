@@ -616,7 +616,7 @@ instFirstCombined : '<div style="font-family: Inter, system-ui, sans-serif; max-
 			}],
 			// this stimulus used for giving feedback, in this case only the error notification
 			error : [{
-				handle:'error', location: {top: 75}, css:{color:'red','font-size':'4em'}, media: {word:'X'}, nolog:true
+				handle:'error', location: {top: 70}, css:{color:'#ef4444','font-size':'5em', 'font-weight':'700', 'text-shadow':'0 4px 12px rgba(239, 68, 68, 0.4)', 'font-family':'Inter, system-ui, sans-serif'}, media: {word:'✕'}, nolog:true
 			}],
 
 			touchInputStimuli: [
@@ -670,7 +670,7 @@ instFirstCombined : '<div style="font-family: Inter, system-ui, sans-serif; max-
 			}
 
 			var template = '' +
-			'   <div style="margin:0 1em; text-align:<%= stimulusData.isLeft ? \'left\' : \'right\' %>; line-height:1.4;"> '  +
+			'   <div style="margin:0; padding:16px 20px; text-align:<%= stimulusData.isLeft ? \'left\' : \'right\' %>; line-height:1.4;"> '  +
 			'   	<div style="font-size:0.75em; margin-bottom:4px; <%= stimulusData.keysCss %>; visibility:<%= stimulusData.isTouch ? \'hidden\' : \'visible\' %>">  '  +
 			'   		<%= stimulusData.isLeft ? stimulusData.leftKeyText : stimulusData.rightKeyText %>  '  +
 			'   	</div>  '  +
