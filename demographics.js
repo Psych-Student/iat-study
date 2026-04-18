@@ -63,6 +63,7 @@ define(['questAPI'], function(Quest){
         answers: [
             {text: 'Man', value: 1},
             {text: 'Non-binary', value: 2},
+            {text: 'Other', value: 4},
             {text: 'Woman', value: 3},
             {text: 'Prefer not to say', value: 0}
         ]
@@ -78,6 +79,7 @@ define(['questAPI'], function(Quest){
             {text: 'Gay', value: 3},
             {text: 'Heterosexual', value: 4},
             {text: 'Lesbian', value: 5},
+            {text: 'Other', value: 8},
             {text: 'Pansexual', value: 6},
             {text: 'Queer', value: 7},
             {text: 'Prefer not to say', value: 0}
@@ -114,6 +116,7 @@ define(['questAPI'], function(Quest){
             {text: 'Mixed or Multiple ethnicities', value: 5},
             {text: 'Native American or Alaska Native', value: 6},
             {text: 'Native Hawaiian or Pacific Islander', value: 7},
+            {text: 'Other', value: 9},
             {text: 'White or Caucasian', value: 8},
             {text: 'Prefer not to say', value: 0}
         ]
