@@ -148,21 +148,12 @@ define(['managerAPI',
             ]
         },
 
-        {
-            mixer:'random',
-            data:[
-                {inherit: 'demographics'},
+        // IAT task
+        {inherit: 'iat_instructions'},
+        {inherit: 'iat'},
 
-                // force the instructions to precede the iat
-                {
-                    mixer: 'wrapper',
-                    data: [
-                        {inherit: 'iat_instructions'},
-                        {inherit: 'iat'}
-                    ]
-                }
-            ]
-        },
+        // Demographics at the end
+        {inherit: 'demographics'},
 
 		{inherit: 'uploading'},
         {inherit: 'lastpage'},

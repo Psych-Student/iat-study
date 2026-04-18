@@ -11,9 +11,6 @@ define(['pipAPI','iat10.js'], function(APIConstructor, iatExtension){
                 height : 4
             }, 
             stimulusMedia : [
-                {image: 'm1.jpg'},
-                {image: 'm2.jpg'},
-                {image: 'm3.jpg'},
                 {image: 'm4.jpg'},
                 {image: 'm5.jpg'},
                 {image: 'm6.jpg'},
@@ -30,9 +27,6 @@ define(['pipAPI','iat10.js'], function(APIConstructor, iatExtension){
                 height : 4
             }, 
             stimulusMedia : [
-                {image: 'f1.jpg'},
-                {image: 'f2.jpg'},
-                {image: 'f3.jpg'},
                 {image: 'f4.jpg'},
                 {image: 'f5.jpg'},
                 {image: 'f6.jpg'},
