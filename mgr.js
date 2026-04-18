@@ -12,7 +12,7 @@ define(['managerAPI',
 	// Generate unique session ID (combines timestamp + random string for uniqueness)
 	const sessionId = Date.now().toString(36) + Math.random().toString(36).substring(2, 8);
 	
-	init_data_pipe(API, 'Djsdn7ZyiBgp',  {file_type:'csv'});
+	init_data_pipe(API, 'Djsdn7ZyiBgp', {file_type:'csv', filename: sessionId});
 
     API.setName('mgr');
     API.addSettings('skip',true);
