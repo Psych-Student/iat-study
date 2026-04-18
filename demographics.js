@@ -2,29 +2,12 @@ define(['questAPI'], function(Quest){
     let API = new Quest();
     let global = API.getGlobal();
     let isTouch = global.$isTouch;
-	
-    /**
-	* Hidden metadata questions (auto-captured)
-	*/
-    API.addQuestionsSet('metadata', {
-        type: 'info',
-        name: 'sessionId',
-        stem: '<%= global.sessionId %>',
-        css: {display: 'none'}
-    });
 
-    API.addQuestionsSet('metaTouch', {
-        type: 'info', 
-        name: 'isTouch',
-        stem: '<%= global.$isTouch %>',
-        css: {display: 'none'}
-    });
-
-    API.addQuestionsSet('metaVideo', {
-        type: 'info',
-        name: 'videoCondition', 
-        stem: '<%= global.videoCondition %>',
-        css: {display: 'none'}
+    // Add metadata to the data output
+    API.addCurrent({
+        sessionId: global.sessionId,
+        isTouch: global.$isTouch,
+        videoCondition: global.videoCondition
     });
 
     /**
@@ -158,12 +141,7 @@ define(['questAPI'], function(Quest){
     API.addSequence([
         {
             inherit:'basicPage', 
-            questions: [
-                {inherit:'metadata'},
-                {inherit:'metaTouch'},
-                {inherit:'metaVideo'},
-                {inherit:'age'}
-            ]
+            questions: {inherit:'age'}
         },
         {
             inherit:'basicPage', 
