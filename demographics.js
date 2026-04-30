@@ -7,7 +7,8 @@ define(['questAPI'], function(Quest){
     API.addCurrent({
         sessionId: global.sessionId,
         isTouch: global.$isTouch,
-        videoCondition: global.videoCondition
+        videoCondition: global.videoCondition,
+        appVersion: global.appVersion
     });
 
     /**

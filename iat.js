@@ -79,7 +79,8 @@ define(['pipAPI','iat10.js'], function(APIConstructor, iatExtension){
         // Include metadata in IAT output
         data : {
             sessionId: global.sessionId,
-            videoCondition: global.videoCondition
+            videoCondition: global.videoCondition,
+            appVersion: global.appVersion
         }
     });
 });

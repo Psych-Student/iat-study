@@ -9,6 +9,10 @@ define(['managerAPI',
 
 	var API    = new Manager();
 
+	// Bump this whenever you ship changes. Shows in the on-screen banner so
+	// you can verify a refresh actually loaded the latest build.
+	const APP_VERSION = 'v1.0.0';
+
 	// IMPORTANT: init_data_pipe generates its own sessionId and stores it on
 	// global.sessionId. We must read it back AFTER calling init_data_pipe so the
 	// ID we display to the participant matches the ID stamped on every CSV row
@@ -64,7 +68,8 @@ define(['managerAPI',
 		banner.id = 'session-id-banner';
 		banner.innerHTML =
 			'<span style="color:#64748b;font-weight:500;margin-right:8px;">Session ID:</span>' +
-			'<code style="background:#fff;color:#4f46e5;padding:3px 10px;border-radius:5px;font-weight:600;letter-spacing:0.5px;border:1px solid #c7d2fe;font-size:13px;">' + sessionId + '</code>';
+			'<code style="background:#fff;color:#4f46e5;padding:3px 10px;border-radius:5px;font-weight:600;letter-spacing:0.5px;border:1px solid #c7d2fe;font-size:13px;">' + sessionId + '</code>' +
+			'<span style="color:#94a3b8;margin-left:10px;font-size:11px;font-weight:500;letter-spacing:0.3px;">' + APP_VERSION + '</span>';
 		banner.style.cssText = 'position:fixed;top:0;right:0;background:#f1f5f9;border-bottom-left-radius:8px;padding:8px 14px;font-family:Inter,system-ui,sans-serif;font-size:13px;color:#64748b;border-left:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;z-index:9999;box-shadow:0 1px 3px rgba(0,0,0,0.05);';
 		document.body.appendChild(banner);
 	}
@@ -82,6 +87,7 @@ define(['managerAPI',
 
     API.addGlobal({
         iat:{},
+        appVersion: APP_VERSION,
         baseURL: './images/',
         menLabels: 'Men',
         womenLabels: 'Women',
