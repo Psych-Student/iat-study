@@ -11,7 +11,24 @@ define(['managerAPI',
 	
 	// Generate unique session ID (combines timestamp + random string for uniqueness)
 	const sessionId = Date.now().toString(36) + Math.random().toString(36).substring(2, 8);
-	
+
+	// Inject a small persistent banner displaying the session ID on every screen
+	function injectSessionIdBanner() {
+		if (document.getElementById('session-id-banner')) return;
+		const banner = document.createElement('div');
+		banner.id = 'session-id-banner';
+		banner.innerHTML =
+			'<span style="color:#64748b;font-weight:500;margin-right:8px;">Session ID:</span>' +
+			'<code style="background:#fff;color:#4f46e5;padding:3px 10px;border-radius:5px;font-weight:600;letter-spacing:0.5px;border:1px solid #c7d2fe;font-size:13px;">' + sessionId + '</code>';
+		banner.style.cssText = 'position:fixed;top:0;right:0;background:#f1f5f9;border-bottom-left-radius:8px;padding:8px 14px;font-family:Inter,system-ui,sans-serif;font-size:13px;color:#64748b;border-left:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;z-index:9999;box-shadow:0 1px 3px rgba(0,0,0,0.05);';
+		document.body.appendChild(banner);
+	}
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', injectSessionIdBanner);
+	} else {
+		injectSessionIdBanner();
+	}
+
 	init_data_pipe(API, 'Djsdn7ZyiBgp', {file_type:'csv', filename: sessionId});
 
     API.setName('mgr');
@@ -29,10 +46,10 @@ define(['managerAPI',
         videoCondition: videoCondition,
         // Leader and Supporter word sets
         leaderWords : API.shuffle([
-            'Leader', 'Boss', 'Executive', 'Manager', 'Supervisor', 'Authority', 'Decisive', 'Assertive'
+            'Leader', 'Boss', 'Executive', 'Manager', 'Supervisor', 'Authority', 'Decisive'
         ]), 
         supporterWords : API.shuffle([
-            'Supporter', 'Assistant', 'Helper', 'Worker', 'Passive', 'Subordinate', 'Follower', 'Staff'
+            'Supporter', 'Assistant', 'Helper', 'Passive', 'Subordinate', 'Follower', 'Staff'
         ])
     });
 
@@ -42,12 +59,20 @@ define(['managerAPI',
             buttonText: 'Continue'
         }],
 
-        intro: [{
+        welcome: [{
             inherit: 'instructions',
-            name: 'intro',
-            templateUrl: 'intro.jst',
-            title: 'Intro',
+            name: 'welcome',
+            templateUrl: 'welcome.jst',
+            title: 'Welcome',
             header: 'Welcome'
+        }],
+
+        consent: [{
+            inherit: 'instructions',
+            name: 'consent',
+            templateUrl: 'intro.jst',
+            title: 'Informed Consent',
+            header: 'Informed Consent'
         }],
 
         video: [{
@@ -137,7 +162,8 @@ define(['managerAPI',
         },
         
         
-        {inherit: 'intro'},
+        {inherit: 'welcome'},
+        {inherit: 'consent'},
 
         // Show video only if videoCondition is true (50% of participants)
         {

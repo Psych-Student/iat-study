@@ -1,37 +1,70 @@
 <div class="panel panel-info" style="margin-top:1em">
 	<div class="panel-heading">
-		<h1 class="panel-title">Welcome</h1>
+		<h1 class="panel-title">Informed Consent</h1>
 	</div>
 	<div class="panel-body">
-		<p class='lead'>
-			Thank you for participating in our study.
-		</p>
-		<p class='lead'>
-			You will complete a sorting task and answer a few questions. This takes approximately <strong>5-10 minutes</strong>.
-		</p>
-		
-		<div style="background: #f1f5f9; border-radius: 8px; padding: 16px 20px; margin: 20px 0; border-left: 4px solid #4f46e5;">
-			<p style="margin: 0 0 12px 0; font-weight: 600; color: #1e293b;">Important Information</p>
-			<p style="margin: 0 0 8px 0; color: #475569; font-size: 0.95em;">
-				The purpose of this study is to examine <strong>implicit bias</strong>.
+
+		<!-- Session ID display with opt-out reminder -->
+		<div style="background: #eef2ff; border-radius: 8px; padding: 16px 20px; margin: 0 0 24px 0; border-left: 4px solid #4f46e5;">
+			<p style="margin: 0 0 8px 0; font-weight: 600; color: #1e293b;">Your Session ID</p>
+			<p style="margin: 0 0 10px 0; font-family: 'Inter', system-ui, sans-serif;">
+				<code style="background:#fff; color:#4f46e5; padding:6px 14px; border-radius:6px; font-size:1.1em; font-weight:600; letter-spacing:0.5px; border:1px solid #c7d2fe;"><%= global.sessionId %></code>
 			</p>
+			<p style="margin: 0; color: #475569; font-size: 0.9em;">
+				Please write down or save your Session ID. You may use it to request that your responses be removed from the study at any time.
+			</p>
+		</div>
+
+		<!-- Purpose -->
+		<h3 style="color:#1e293b; font-size:1.15em; margin-top:0;">Purpose of the Study</h3>
+		<p style="color:#475569;">
+			The purpose of this study is to examine <strong>unconscious gender bias in leadership</strong>.
+		</p>
+
+		<!-- Researchers -->
+		<h3 style="color:#1e293b; font-size:1.15em;">Researchers</h3>
+		<p style="color:#475569; margin-bottom: 8px;">
+			This study is being conducted by <strong>Amethyst Stemme</strong>, a psychology student at Everett Community College.
+		</p>
+		<p style="color:#475569; margin-bottom: 8px;">
+			Contact: <a href="mailto:amstemme@students.everettcc.edu">amstemme@students.everettcc.edu</a>
+		</p>
+		<p style="color:#475569; margin-bottom: 8px;">
+			Faculty Supervisor: <strong>Dr. Diane Simpson Brown</strong>
+		</p>
+		<p style="color:#475569;">
+			Contact: <a href="mailto:dbrown@everettcc.edu">dbrown@everettcc.edu</a>
+		</p>
+
+		<!-- Eligibility -->
+		<h3 style="color:#1e293b; font-size:1.15em;">Eligibility</h3>
+		<p style="color:#475569;">
+			You must be <strong>18 years or older</strong> to participate in this study.
+		</p>
+
+		<!-- Risks & Benefits -->
+		<h3 style="color:#1e293b; font-size:1.15em;">Risks &amp; Benefits</h3>
+		<p style="color:#475569;">
+			There are no expected benefits to participating. The primary risk is the possibility of <strong>mild stress or anxiety</strong> from completing a timed sorting task.
+		</p>
+
+		<!-- Confidentiality & Voluntary Participation -->
+		<div style="background: #f1f5f9; border-radius: 8px; padding: 16px 20px; margin: 24px 0; border-left: 4px solid #4f46e5;">
+			<p style="margin: 0 0 12px 0; font-weight: 600; color: #1e293b;">Confidentiality &amp; Your Rights</p>
 			<p style="margin: 0 0 8px 0; color: #475569; font-size: 0.95em;">
 				This survey is <strong>completely anonymous</strong>. No personally identifiable information will be collected.
 			</p>
 			<p style="margin: 0 0 8px 0; color: #475569; font-size: 0.95em;">
-				There are <strong>no expected risks or benefits</strong> to participating.
-			</p>
-			<p style="margin: 0 0 8px 0; color: #475569; font-size: 0.95em;">
-				By completing this survey, you consent to your responses being used for research purposes.
+				Participation is <strong>voluntary</strong>. You may end the survey at any time without penalty.
 			</p>
 			<p style="margin: 0; color: #475569; font-size: 0.95em;">
-				Participation is voluntary. You may choose to end the survey at any point in time.
+				By clicking the button below, you confirm that you are at least 18 years old and consent to your responses being used for research purposes.
 			</p>
 		</div>
-		
+
 		<div class="text-center proceed" style="margin: 30px auto 10px;">
 			<button pi-message-done type="button" class="btn btn-primary">
-				Begin Study
+				I Consent &mdash; Begin Study
 			</button>
 		</div>
 	</div>

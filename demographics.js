@@ -18,7 +18,7 @@ define(['questAPI'], function(Quest){
         header: 'Demographics',
         decline: false,
         autoFocus:true, 
-        progressBar: 'Page <%= pagesMeta.number %> out of 6'
+        progressBar: 'Page <%= pagesMeta.number %> out of 8'
     });
 	
     /**
@@ -141,6 +141,26 @@ define(['questAPI'], function(Quest){
         ]
     });
 
+    API.addQuestionsSet('country',{
+        type: 'text',
+        name: 'country',
+        stem: 'What country do you currently live in?',
+        required: true,
+        errorMsg: {required: 'Please enter your country'},
+        autoSubmit: false
+    });
+
+    API.addQuestionsSet('priorIAT',{
+        inherit : 'basicSelect',
+        name: 'prior_iat_experience',
+        stem: 'How many Implicit Association Tests (IATs) have you completed in the past?',
+        answers: [
+            {text: 'None', value: 0},
+            {text: 'Once or twice', value: 1},
+            {text: 'Three times or more', value: 2}
+        ]
+    });
+
     API.addSequence([
         {
             inherit:'basicPage', 
@@ -165,6 +185,14 @@ define(['questAPI'], function(Quest){
         {
             inherit:'basicPage', 
             questions: {inherit:'religion'}
+        },
+        {
+            inherit:'basicPage', 
+            questions: {inherit:'country'}
+        },
+        {
+            inherit:'basicPage', 
+            questions: {inherit:'priorIAT'}
         }
     ]);
 
