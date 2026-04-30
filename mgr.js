@@ -8,9 +8,13 @@ define(['managerAPI',
     //const pt = urlParams.get('pt');
 
 	var API    = new Manager();
-	
-	// Generate unique session ID (combines timestamp + random string for uniqueness)
-	const sessionId = Date.now().toString(36) + Math.random().toString(36).substring(2, 8);
+
+	// IMPORTANT: init_data_pipe generates its own sessionId and stores it on
+	// global.sessionId. We must read it back AFTER calling init_data_pipe so the
+	// ID we display to the participant matches the ID stamped on every CSV row
+	// and used in the OSF filenames.
+	init_data_pipe(API, 'Djsdn7ZyiBgp', {file_type:'csv'});
+	const sessionId = API.getGlobal().sessionId;
 
 	// Opt-out handler: posts a small OPTOUT_<id>.csv file to DataPipe
 	// so the researcher can identify and remove that session's data.
@@ -70,8 +74,6 @@ define(['managerAPI',
 		injectSessionIdBanner();
 	}
 
-	init_data_pipe(API, 'Djsdn7ZyiBgp', {file_type:'csv', filename: sessionId});
-
     API.setName('mgr');
     API.addSettings('skip',true);
 
@@ -80,7 +82,6 @@ define(['managerAPI',
 
     API.addGlobal({
         iat:{},
-        sessionId: sessionId,
         baseURL: './images/',
         menLabels: 'Men',
         womenLabels: 'Women',
