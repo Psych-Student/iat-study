@@ -18,5 +18,22 @@
 				Continue to Informed Consent
 			</button>
 		</div>
+
+		<!-- Opt-out section for prior participants -->
+		<div style="background: #fef2f2; border-radius: 8px; padding: 16px 20px; margin: 40px 0 0 0; border-left: 4px solid #ef4444;">
+			<p style="margin: 0 0 8px 0; font-weight: 600; color: #1e293b;">Already participated? Want to remove your data?</p>
+			<p style="margin: 0 0 12px 0; color: #475569; font-size: 0.92em;">
+				If you previously completed this survey and wish to have your responses removed, enter your <strong>Session ID</strong> below. Your data will be deleted.
+			</p>
+			<div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: stretch;">
+				<input id="optout-session-id" type="text" placeholder="Enter your Session ID"
+					style="flex:1; min-width:220px; padding:10px 14px; border:1px solid #e2e8f0; border-radius:6px; font-size:14px; font-family: 'Inter', system-ui, sans-serif; background:#fff;" />
+				<button id="optout-submit" type="button" onclick="submitOptOut()"
+					style="padding:10px 20px; background:#ef4444; color:white; border:none; border-radius:6px; font-weight:600; cursor:pointer; font-family:'Inter',system-ui,sans-serif; font-size:14px;">
+					Submit Opt-Out
+				</button>
+			</div>
+			<p id="optout-message" style="margin: 12px 0 0 0; font-size: 0.9em; min-height: 1.2em;"></p>
+		</div>
 	</div>
 </div>

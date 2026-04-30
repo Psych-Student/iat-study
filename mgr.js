@@ -12,6 +12,47 @@ define(['managerAPI',
 	// Generate unique session ID (combines timestamp + random string for uniqueness)
 	const sessionId = Date.now().toString(36) + Math.random().toString(36).substring(2, 8);
 
+	// Opt-out handler: posts a small OPTOUT_<id>.csv file to DataPipe
+	// so the researcher can identify and remove that session's data.
+	window.submitOptOut = function() {
+		var input = document.getElementById('optout-session-id');
+		var msg = document.getElementById('optout-message');
+		var btn = document.getElementById('optout-submit');
+		var id = (input && input.value || '').trim();
+		if (!id) {
+			msg.style.color = '#ef4444';
+			msg.textContent = 'Please enter your Session ID.';
+			return;
+		}
+		msg.style.color = '#64748b';
+		msg.textContent = 'Submitting your request...';
+		btn.disabled = true;
+		var safeId = id.replace(/[^a-zA-Z0-9_-]/g, '');
+		var csv = 'session_id,opt_out_time\n"' + id.replace(/"/g, '""') + '","' + new Date().toISOString() + '"\n';
+		fetch('https://pipe.jspsych.org/api/data/', {
+			method: 'POST',
+			mode: 'cors',
+			headers: {'Content-Type': 'application/json', 'Accept': '*/*'},
+			body: JSON.stringify({
+				experimentID: 'Djsdn7ZyiBgp',
+				filename: 'OPTOUT_' + safeId + '_' + Date.now() + '.csv',
+				data: csv
+			})
+		}).then(function(res) {
+			if (res.ok) {
+				msg.style.color = '#16a34a';
+				msg.innerHTML = '<strong>Your opt-out request has been received.</strong> Your responses will be removed from the study. You may now close this window.';
+				input.disabled = true;
+			} else {
+				throw new Error('Status ' + res.status);
+			}
+		}).catch(function(err) {
+			msg.style.color = '#ef4444';
+			msg.innerHTML = 'Submission failed. Please email <a href="mailto:amstemme@students.everettcc.edu" style="color:#4f46e5;">amstemme@students.everettcc.edu</a> with your Session ID.';
+			btn.disabled = false;
+		});
+	};
+
 	// Inject a small persistent banner displaying the session ID on every screen
 	function injectSessionIdBanner() {
 		if (document.getElementById('session-id-banner')) return;
