@@ -19,7 +19,7 @@ define(['questAPI'], function(Quest){
         header: 'Demographics',
         decline: false,
         autoFocus:true, 
-        progressBar: 'Page <%= pagesMeta.number %> out of 8'
+        progressBar: 'Page <%= pagesMeta.number %> out of 9'
     });
 	
     /**
@@ -162,6 +162,15 @@ define(['questAPI'], function(Quest){
         ]
     });
 
+    API.addQuestionsSet('comments',{
+        type: 'textarea',
+        name: 'comments',
+        stem: 'Do you have any additional comments or feedback about this study? <em style="color:#64748b;font-weight:normal;">(optional)</em>',
+        rows: 5,
+        required: false,
+        autoSubmit: false
+    });
+
     API.addSequence([
         {
             inherit:'basicPage', 
@@ -194,6 +203,11 @@ define(['questAPI'], function(Quest){
         {
             inherit:'basicPage', 
             questions: {inherit:'priorIAT'}
+        },
+        {
+            inherit:'basicPage', 
+            header: 'Additional Comments',
+            questions: {inherit:'comments'}
         }
     ]);
 
