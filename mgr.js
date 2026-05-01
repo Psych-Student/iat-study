@@ -11,13 +11,13 @@ define(['managerAPI',
 
 	// Bump this whenever you ship changes. Shows in the on-screen banner so
 	// you can verify a refresh actually loaded the latest build.
-	const APP_VERSION = 'v1.0.0';
+	const APP_VERSION = 'v1.0.1';
 
 	// IMPORTANT: init_data_pipe generates its own sessionId and stores it on
 	// global.sessionId. We must read it back AFTER calling init_data_pipe so the
 	// ID we display to the participant matches the ID stamped on every CSV row
 	// and used in the OSF filenames.
-	init_data_pipe(API, 'Djsdn7ZyiBgp', {file_type:'csv'});
+	init_data_pipe(API, 'dFMf5w1ogDDS', {file_type:'csv'});
 	const sessionId = API.getGlobal().sessionId;
 
 	// Opt-out handler: posts a small OPTOUT_<id>.csv file to DataPipe
@@ -42,7 +42,7 @@ define(['managerAPI',
 			mode: 'cors',
 			headers: {'Content-Type': 'application/json', 'Accept': '*/*'},
 			body: JSON.stringify({
-				experimentID: 'Djsdn7ZyiBgp',
+				experimentID: 'dFMf5w1ogDDS',
 				filename: 'OPTOUT_' + safeId + '_' + Date.now() + '.csv',
 				data: csv
 			})
