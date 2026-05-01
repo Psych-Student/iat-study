@@ -11,17 +11,22 @@ define(['managerAPI',
 
 	// Bump this whenever you ship changes. Shows in the on-screen banner so
 	// you can verify a refresh actually loaded the latest build.
-	const APP_VERSION = 'v1.0.1';
+	const APP_VERSION = 'v1.0.2';
 
 	// IMPORTANT: init_data_pipe generates its own sessionId and stores it on
 	// global.sessionId. We must read it back AFTER calling init_data_pipe so the
 	// ID we display to the participant matches the ID stamped on every CSV row
 	// and used in the OSF filenames.
-	init_data_pipe(API, 'dFMf5w1ogDDS', {file_type:'csv'});
+	// Main study uploads (IAT + demographics) go here:
+	const MAIN_DATAPIPE_ID = 'dFMf5w1ogDDS';
+	// Opt-out requests only — same OSF org, separate component for cleaner storage.
+	// Session IDs are plain text in the opt-out CSV; match them to filenames / sessionId in the main pipe.
+	const OPTOUT_DATAPIPE_ID = '4DVFFXZSk5WP';
+
+	init_data_pipe(API, MAIN_DATAPIPE_ID, {file_type:'csv'});
 	const sessionId = API.getGlobal().sessionId;
 
-	// Opt-out handler: posts a small OPTOUT_<id>.csv file to DataPipe
-	// so the researcher can identify and remove that session's data.
+	// Opt-out handler: posts a small OPTOUT_<id>.csv file to the opt-out DataPipe only.
 	window.submitOptOut = function() {
 		var input = document.getElementById('optout-session-id');
 		var msg = document.getElementById('optout-message');
@@ -42,7 +47,7 @@ define(['managerAPI',
 			mode: 'cors',
 			headers: {'Content-Type': 'application/json', 'Accept': '*/*'},
 			body: JSON.stringify({
-				experimentID: 'dFMf5w1ogDDS',
+				experimentID: OPTOUT_DATAPIPE_ID,
 				filename: 'OPTOUT_' + safeId + '_' + Date.now() + '.csv',
 				data: csv
 			})
