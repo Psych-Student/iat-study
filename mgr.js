@@ -165,7 +165,7 @@ define(['managerAPI',
         redirect:
         [{ 
 			//Replace with any URL you need to put at the end of your study, or just remove this task from the sequence below
-            type:'redirect', name:'redirecting', url: 'exampleiat.html' 
+            type:'redirect', name:'redirecting', url: 'iat.html' 
         }],
 		
 		//This task waits until the data are sent to the server.
