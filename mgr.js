@@ -11,7 +11,7 @@ define(['managerAPI',
 
 	// Bump this whenever you ship changes. Shows in the on-screen banner so
 	// you can verify a refresh actually loaded the latest build.
-	const APP_VERSION = 'v1.0.2';
+	const APP_VERSION = 'v1.0.3';
 
 	// IMPORTANT: init_data_pipe generates its own sessionId and stores it on
 	// global.sessionId. We must read it back AFTER calling init_data_pipe so the
@@ -23,7 +23,17 @@ define(['managerAPI',
 	// Session IDs are plain text in the opt-out CSV; match them to filenames / sessionId in the main pipe.
 	const OPTOUT_DATAPIPE_ID = '4DVFFXZSk5WP';
 
-	init_data_pipe(API, MAIN_DATAPIPE_ID, {file_type:'csv'});
+	// Video condition must exist before init_data_pipe. DataPipe merges `params`
+	// into every logged row — Quest addCurrent / IAT top-level `data` do not.
+	var videoCondition = API.shuffle([true, false])[0];
+
+	init_data_pipe(API, MAIN_DATAPIPE_ID, {
+		file_type: 'csv',
+		params: {
+			videoCondition: videoCondition,
+			appVersion: APP_VERSION
+		}
+	});
 	const sessionId = API.getGlobal().sessionId;
 
 	// Opt-out handler: posts a small OPTOUT_<id>.csv file to the opt-out DataPipe only.
@@ -86,9 +96,6 @@ define(['managerAPI',
 
     API.setName('mgr');
     API.addSettings('skip',true);
-
-    // Randomly assign to video condition (50% chance)
-    let videoCondition = API.shuffle([true, false])[0];
 
     API.addGlobal({
         iat:{},
